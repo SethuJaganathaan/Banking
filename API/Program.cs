@@ -1,3 +1,7 @@
+using System.Reflection;
+using Application.Core;
+using Application.Persons;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Persistence.Context;
 
@@ -12,6 +16,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<BankingContext>(option => option
 .UseSqlServer(builder.Configuration.GetConnectionString("connectionDb")));
+
+builder.Services.AddMediatR(typeof(Create.Handler));
+builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly);
 
 var app = builder.Build();
 
