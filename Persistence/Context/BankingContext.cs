@@ -34,7 +34,7 @@ public partial class BankingContext : DbContext
                    .AddJsonFile("appsettings.json")
                    .Build();
 
-                var connectionstring = configuration.GetConnectionString("DataBaseConnectionString");
+                var connectionstring = configuration.GetConnectionString("connectionDab");
                 optionsBuilder.UseSqlServer(connectionstring);
             }
     }
