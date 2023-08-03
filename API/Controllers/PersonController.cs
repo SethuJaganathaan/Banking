@@ -1,6 +1,5 @@
 using Application.DTO;
 using Application.Persons;
-using Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

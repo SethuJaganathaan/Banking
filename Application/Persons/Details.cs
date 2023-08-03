@@ -1,6 +1,5 @@
 using Application.DTO;
 using AutoMapper;
-using Domain.Entities;
 using MediatR;
 using Persistence.Context;
 
