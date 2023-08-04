@@ -8,7 +8,7 @@ namespace Application.DTO
 
         public string Email { get; set; }
 
-        public long? Mobilenumber { get; set; }
+        public long Mobilenumber { get; set; }
 
         public string Pancard { get; set; }
 
