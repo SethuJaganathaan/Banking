@@ -1,5 +1,6 @@
 using Application.DTO;
 using Application.Persons;
+using Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,6 +24,12 @@ namespace API.Controllers
         public async Task<ActionResult<PersonDTO>> GetPerson(Guid id)
         {
             return await Mediator.Send(new Details.Query{Id = id});
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<List<PersonalDetail>>> getPersonalDetail()
+        {
+            return await Mediator.Send(new Lists.Query());
         }
     }
 }
