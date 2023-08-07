@@ -1,12 +1,16 @@
-import './App.css';
+import { Outlet, Route, Routes } from "react-router-dom";
+import "./App.css";
+import NavBar from "./NavBar";
+import { Container } from "semantic-ui-react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        Hi
-      </header>
-    </div>
+    <>
+      <NavBar />
+      <div style={{ marginTop: "7em" }}>
+        <Outlet />
+      </div>
+    </>
   );
 }
 
