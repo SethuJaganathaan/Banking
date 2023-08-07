@@ -3,6 +3,7 @@ using Application.Core;
 using Application.Persons;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using Persistence.Context;
 
 var builder = WebApplication.CreateBuilder(args);

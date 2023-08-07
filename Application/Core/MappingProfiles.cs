@@ -12,10 +12,14 @@ namespace Application.Core
             CreateMap<UserSecurityQuestion, UserSecurityQuestionDTO>().ReverseMap();
 
             CreateMap<QuestionAnswerDTO, UserSecurityQuestion>()
-                .ForMember(dest => dest.UserQuestionId, opt => opt.Ignore()) 
-                //.ForMember(dest => dest.UserId, opt =)
+                .ForMember(dest => dest.UserQuestionId, opt => opt.Ignore())
                 .ForMember(dest => dest.QuestionId, opt => opt.MapFrom(src => src.QuestionId))
                 .ForMember(dest => dest.Answer, opt => opt.MapFrom(src => src.Answer));
+
+             CreateMap<UserKycDTO, UserKycdetail>()
+                .ForMember(dest => dest.Filedata, opt => opt.Ignore())
+                .ForMember(dest => dest.Filename, opt => opt.Ignore());
+
         }
     }
 }

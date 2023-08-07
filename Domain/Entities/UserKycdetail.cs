@@ -4,9 +4,9 @@ public partial class UserKycdetail
 {
     public Guid UserKycid { get; set; }
 
-    public Guid? UserId { get; set; }
+    public Guid UserId { get; set; }
 
-    public Guid? KycId { get; set; }
+    public Guid KycId { get; set; }
 
     public byte[] Filedata { get; set; }
 

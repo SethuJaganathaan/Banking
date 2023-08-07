@@ -4,13 +4,13 @@ using Domain.Entities;
 using MediatR;
 using Persistence.Context;
 
-namespace Application.UserSecurityQuestions
+namespace Application.UserKycDetail
 {
     public class Create
     {
         public class Command : IRequest
         {
-            public UserSecurityQuestionDTO userSecurityQuestionDTO { get; set; }
+            public UserKycDTO userKycDTO { get; set; }
         }
 
         public class Handler : IRequestHandler<Command>
@@ -24,18 +24,20 @@ namespace Application.UserSecurityQuestions
             }
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
-                var userSecurityQuestions = _mapper.Map<List<UserSecurityQuestion>>(request.userSecurityQuestionDTO.Questions);
-
-                foreach (var userSecurityQuestion in userSecurityQuestions)
+                request.userKycDTO.UserKycid = Guid.NewGuid();
+                var userKycDetail = _mapper.Map<UserKycdetail>(request.userKycDTO);
+                
+                using (var memoryStream = new MemoryStream())
                 {
-                    var id = Guid.NewGuid();
-                    userSecurityQuestion.UserQuestionId = id;
-                    userSecurityQuestion.UserId = request.userSecurityQuestionDTO.UserId;
-                    _context.UserSecurityQuestions.Add(userSecurityQuestion);
+                    await request.userKycDTO.file.CopyToAsync(memoryStream);
+                    userKycDetail.Filedata = memoryStream.ToArray();
+                    userKycDetail.Filename = request.userKycDTO.file.FileName;
                 }
+
+                _context.UserKycdetails.Add(userKycDetail);
                 await _context.SaveChangesAsync();
 
-                return Unit.Value;
+                return Unit.Value;;
             }
         }
     }
