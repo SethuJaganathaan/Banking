@@ -1,7 +1,6 @@
-import { Outlet, Route, Routes } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import "./App.css";
 import NavBar from "./NavBar";
-import { Container } from "semantic-ui-react";
 
 function App() {
   return (
