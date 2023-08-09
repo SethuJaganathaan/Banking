@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Input } from "semantic-ui-react";
 
 export default function PersonalDetail() {
@@ -35,7 +36,7 @@ export default function PersonalDetail() {
 
           <div className="form-group-checkbox">
           <input className="input-box" type="checkbox"/>
-          <span>&nbsp; &nbsp; I agree with Terms and Condition</span>
+          <span>&nbsp; &nbsp; I agree with <Link to='/terms'>Terms and Condition</Link></span>
           </div>
 
           <div className="submit-input">
