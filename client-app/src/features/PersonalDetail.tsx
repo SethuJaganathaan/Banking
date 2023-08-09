@@ -4,7 +4,9 @@ import { Input } from "semantic-ui-react";
 export default function PersonalDetail() {
   return (
     <div className="Bamboo-personaldeatil">
-      <div className="Bamboo-pd-card-1">Hi</div>
+      <div className="Bamboo-pd-card-1">
+        
+      </div>
 
       <div className="Bamboo-pd-card-2">
         <div className="Bamboo-pd-card-content">

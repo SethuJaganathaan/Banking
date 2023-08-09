@@ -84,7 +84,9 @@
 }
 
 .Bamboo-pd-card-1 {
-  flex: 1;
+  flex: 1 ;
+  background-size: cover;
+  background: url("../../../public/assets/basebg.png");
 }
 
 .Bamboo-pd-card-2 {
