@@ -84,7 +84,9 @@
 }
 
 .Bamboo-pd-card-1 {
-  flex: 1;
+  flex: 1 ;
+  background-size: cover;
+  background: url("../../../public/assets/basebg.png");
 }
 
 .Bamboo-pd-card-2 {
@@ -258,5 +260,11 @@ input[type="text"] {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.bank-icon {
+  position: relative;
+  left: 757px;
+  bottom: 308px;
 }
 

@@ -4,7 +4,9 @@ import { Input } from "semantic-ui-react";
 export default function PersonalDetail() {
   return (
     <div className="Bamboo-personaldeatil">
-      <div className="Bamboo-pd-card-1">Hi</div>
+      <div className="Bamboo-pd-card-1">
+        
+      </div>
 
       <div className="Bamboo-pd-card-2">
         <div className="Bamboo-pd-card-content">
@@ -44,6 +46,10 @@ export default function PersonalDetail() {
                 submit
             </button>
           </div>
+        </div>
+
+        <div className="bank-icon">
+            <img alt="logo" src="../assets/bankicon.png"/>
         </div>
       </div>
     </div>
