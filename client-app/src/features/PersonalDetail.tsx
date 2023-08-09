@@ -45,6 +45,10 @@ export default function PersonalDetail() {
             </button>
           </div>
         </div>
+
+        <div className="bank-icon">
+            <img alt="logo" src="../assets/bankicon.png"/>
+        </div>
       </div>
     </div>
   );

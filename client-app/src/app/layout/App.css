@@ -260,3 +260,9 @@ input[type="text"] {
   justify-content: center;
 }
 
+.bank-icon {
+  position: relative;
+  left: 757px;
+  bottom: 308px;
+}
+
