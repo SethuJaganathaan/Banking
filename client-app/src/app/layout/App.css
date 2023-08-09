@@ -254,3 +254,9 @@ input[type="text"] {
   border-radius: 2.285714rem;
 }
 
+.form-group-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

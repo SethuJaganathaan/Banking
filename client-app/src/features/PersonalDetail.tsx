@@ -33,7 +33,7 @@ export default function PersonalDetail() {
             <Input className="input-form-pan" type="text" placeholder="PAN number" />
           </div>
 
-          <div>
+          <div className="form-group-checkbox">
           <input className="input-box" type="checkbox"/>
           <span>&nbsp; &nbsp; I agree with Terms and Condition</span>
           </div>
