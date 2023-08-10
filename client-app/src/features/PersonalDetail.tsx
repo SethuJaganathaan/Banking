@@ -24,8 +24,8 @@ export default function PersonalDetail() {
           </div>
 
           <div>
-            <h1>Personal Details</h1>
-            <p>Lets begin with necessary information</p>
+            <h1 className="headin">Personal Details</h1>
+            <p className="para">Let’s begin with some necessary information and get you started</p>
           </div>
 
           <Formik
@@ -43,8 +43,14 @@ export default function PersonalDetail() {
           >
             <Form className="personal-details-form">
               <div className="form-group">
-                <label>Enter mobile number linked with aadhar</label>
+                <label className="label-mobile">Enter mobile number linked with Aadhaar *</label>
                 <br />
+                <input
+                className="input-disable"
+                type="number"
+                placeholder="+91"
+                disabled
+                />
                 <Field
                   className="input-form-mobile"
                   type="text"
@@ -55,7 +61,7 @@ export default function PersonalDetail() {
               </div>
 
               <div className="form-group">
-                <label>Registered/ Personal e-mail address</label>
+                <label className="label-email">Registered/Personal e-mail address *</label>
                 <br />
                 <Field
                   className="input-form-email"
@@ -67,7 +73,7 @@ export default function PersonalDetail() {
               </div>
 
               <div className="form-group">
-                <label>PAN (Personal Account number)</label>
+                <label className="label-pan">PAN (Personal Account Number) *</label>
                 <br />
                 <Field
                   className="input-form-pan"
@@ -81,7 +87,7 @@ export default function PersonalDetail() {
               <div className="form-group-checkbox">
                 <Field type="checkbox" name="agreeTerms" className="input-box" />
                 <span>
-                  &nbsp; &nbsp; I agree with <Link to='/terms'>Terms and Condition</Link>
+                  &nbsp;I agree with <Link to='/terms'>Terms and Condition</Link>
                 </span>
               </div>
               <ErrorMessage name="agreeTerms" component="div" className="error-message" />
