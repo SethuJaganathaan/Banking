@@ -84,7 +84,7 @@
 }
 
 .Bamboo-pd-card-1 {
-  flex: 1 ;
+  flex: 1;
   background-size: cover;
   background: url("../../../public/assets/basebg.png");
 }
@@ -192,12 +192,12 @@ button.Bamboo-card-button-1-2 {
 
 .Bamboo-pd-card-content {
   display: flex;
-  width: 660px;
+  width: 761px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  height: 700px;
-  padding: 20px 60px 30px 65px;
+  height: 750px;
+  padding: 24px 71px 30px 65px;
 }
 
 .form-group {
@@ -206,18 +206,49 @@ button.Bamboo-card-button-1-2 {
 }
 
 .input-form-mobile {
+  padding-left: 5.6em;
   width: 360px;
-  height: 52px;
+  height: 60px;
+  background-color: #c6d0e9;
+  border-color: #c6d0e9;
+  box-shadow: 0 0 0 -1px #c6d0e9 !important;
+  border: #c6d0e9;
+  outline: none;
+}
+
+.input-disable {
+  width: 66px;
+  height: 59.5px;
+  text-align: center;
+  position: absolute;
+  top: 327px;
+  background: #dcf0da;
+  border: #dcf0da;
+  outline: none;
+  left: 541px;
+  border-radius: 5px;
 }
 
 .input-form-email {
+  padding-left: 1em;
   width: 360px;
-  height: 52px;
+  height: 60px;
+  background-color: #c6d0e9;
+  border-color: #c6d0e9;
+  box-shadow: 0 0 0 -1px #c6d0e9 !important;
+  border: #c6d0e9;
+  outline: none;
 }
 
 .input-form-pan {
+  padding-left: 1em;
+  outline: none;
   width: 360px;
-  height: 52px;
+  height: 60px;
+  background-color: #c6d0e9;
+  border-color: #c6d0e9;
+  box-shadow: 0 0 0 -1px #c6d0e9 !important;
+  border: #c6d0e9;
 }
 
 input[type="email"],
@@ -259,7 +290,6 @@ input[type="text"] {
 .form-group-checkbox {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .bank-icon {
@@ -268,3 +298,101 @@ input[type="text"] {
   bottom: 308px;
 }
 
+/* ... your existing CSS ... */
+
+.personal-details-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 46px;
+  width: 480px;
+  margin-bottom: 30px;
+  height: 468px;
+}
+
+.personal-details-form .form-group {
+  margin-bottom: 20px;
+}
+
+.personal-details-form label {
+  font-weight: bold;
+}
+
+.personal-details-form .form-group-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.personal-details-form .input-box {
+  margin-right: 10px;
+}
+
+.personal-details-form .input-button {
+  margin-top: 30px;
+  background-color: #4fb645;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: -1px !important;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.headin {
+  color: var(--light-text, #2b3034);
+  font-feature-settings: "clig" off, "liga" off;
+  /* H! */
+  font-family: "Eina01-SemiBold";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.11px;
+}
+
+.para {
+  color: var(--dark-grey-2, #8790a4);
+  font-feature-settings: "clig" off, "liga" off;
+  /* Body */
+  font-family: "Eina01-SemiBold";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.label-mobile {
+  color: var(--light-text, #2b3034);
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: "Eina01-SemiBold";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px; /* 100% */
+}
+
+.label-email {
+  color: var(--light-text, #2b3034);
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: "Eina01-SemiBold";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px; /* 100% */
+}
+
+.label-pan {
+  color: var(--light-text, #2b3034);
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: "Eina01-SemiBold";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px; /* 100% */
+}
