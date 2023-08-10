@@ -1,61 +1,104 @@
 import { Link } from "react-router-dom";
-import { Input } from "semantic-ui-react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+
+const validationSchema = Yup.object().shape({
+    mobileNumber: Yup.string()
+      .required("Mobile number is required")
+      .matches(/^(\+\d{1,3}[- ]?)?\d{10}$/, "Mobile number must be in the valid"),
+    email: Yup.string().email("Invalid email").required("Email is required"),
+    panNumber: Yup.string().required("PAN number is required").matches(/[A-Z]{5}[0-9]{4}[A-Z]{1}/, "Pan number should be valid"),
+    agreeTerms: Yup.boolean().oneOf([true], "You must agree to the Terms and Conditions"),
+  });
+  
 
 export default function PersonalDetail() {
   return (
     <div className="Bamboo-personaldeatil">
-      <div className="Bamboo-pd-card-1">
-        
-      </div>
+      <div className="Bamboo-pd-card-1"></div>
 
       <div className="Bamboo-pd-card-2">
         <div className="Bamboo-pd-card-content">
-            <div>
-                <img alt="logo" src="../assets/back-arrow.svg"/>
-            </div>
+          <div>
+            <img alt="logo" src="../assets/back-arrow.svg" />
+          </div>
+
           <div>
             <h1>Personal Details</h1>
             <p>Lets begin with necessary information</p>
           </div>
 
-          <div className="form-group">
-            <label>Enter mobile number linked with aadhar</label>
-            <br />
-            <Input className="input-form-mobile" type="text" placeholder="mobile number" />
-          </div>
+          <Formik
+            initialValues={{
+              mobileNumber: "",
+              email: "",
+              panNumber: "",
+              agreeTerms: false,
+            }}
+            validationSchema={validationSchema}
+            onSubmit={(values, { setSubmitting }) => {
+              console.log(values);
+              setSubmitting(false);
+            }}
+          >
+            <Form className="personal-details-form">
+              <div className="form-group">
+                <label>Enter mobile number linked with aadhar</label>
+                <br />
+                <Field
+                  className="input-form-mobile"
+                  type="text"
+                  name="mobileNumber"
+                  placeholder="Enter your mobile number"
+                />
+                <ErrorMessage name="mobileNumber" component="div" className="error-message" />
+              </div>
 
-          <div className="form-group">
-            <label>Registered/ Personal e-mail address</label>
-            <br />
-            <Input className="input-form-email" type="email" placeholder="e-mail" />
-          </div>
+              <div className="form-group">
+                <label>Registered/ Personal e-mail address</label>
+                <br />
+                <Field
+                  className="input-form-email"
+                  type="email"
+                  name="email"
+                  placeholder="Max 59 characters allowed"
+                />
+                <ErrorMessage name="email" component="div" className="error-message" />
+              </div>
 
-          <div className="form-group">
-            <label>PAN (Personal Account number)</label>
-            <br />
-            <Input className="input-form-pan" type="text" placeholder="PAN number" />
-          </div>
+              <div className="form-group">
+                <label>PAN (Personal Account number)</label>
+                <br />
+                <Field
+                  className="input-form-pan"
+                  type="text"
+                  name="panNumber"
+                  placeholder="xxx xxxx xxx"
+                />
+                <ErrorMessage name="panNumber" component="div" className="error-message" />
+              </div>
 
-          <div className="form-group-checkbox">
-          <input className="input-box" type="checkbox"/>
-          <span>&nbsp; &nbsp; I agree with <Link to='/terms'>Terms and Condition</Link></span>
-          </div>
+              <div className="form-group-checkbox">
+                <Field type="checkbox" name="agreeTerms" className="input-box" />
+                <span>
+                  &nbsp; &nbsp; I agree with <Link to='/terms'>Terms and Condition</Link>
+                </span>
+              </div>
+              <ErrorMessage name="agreeTerms" component="div" className="error-message" />
 
-          <div className="submit-input">
-            <button className="input-button">
-                submit
-            </button>
-          </div>
+              <div className="submit-input">
+                <button type="submit" className="input-button">
+                  submit
+                </button>
+              </div>
+            </Form>
+          </Formik>
         </div>
 
         <div className="bank-icon">
-            <img alt="logo" src="../assets/bankicon.png"/>
+          <img alt="logo" src="../assets/bankicon.png" />
         </div>
       </div>
     </div>
   );
 }
-
-
-
-  
